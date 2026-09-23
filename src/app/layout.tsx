@@ -6,21 +6,11 @@ import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const oswald = Oswald({
   subsets: ['latin'],
-  weight: ['400', '700'], // Specify the weights you need
-  display: 'swap',        // Recommended for performance
+  weight: ['400', '700'], 
+  display: 'swap',       
 });
 
 export const metadata: Metadata = {

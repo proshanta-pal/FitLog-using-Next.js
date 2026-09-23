@@ -25,7 +25,7 @@ export default function Navbar() {
                 </div>
                 <div className='flex items-center gap-2'>
                     <Image src={Logo} alt='FitLog Logo'/>
-                    <Link href="/" className='uppercase font-bold'>FitLog</Link>
+                    <Link href="/" className='uppercase font-bold text-xl'>FitLog</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
