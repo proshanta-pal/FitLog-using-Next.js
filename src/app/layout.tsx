@@ -4,6 +4,7 @@ import { Oswald } from 'next/font/google';
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -35,10 +36,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
       
-      <Navbar />
-      {children}
-
-      <ToastContainer />
+        <Navbar />
+        {children}
+        <Footer />
+        <ToastContainer />
       
       </body>
     </html>
