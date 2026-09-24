@@ -3,6 +3,8 @@ import Image from "next/image";
 import React from "react";
 import { BiCalendarPlus } from "react-icons/bi";
 import { LuBookMarked } from "react-icons/lu";
+import PlaysButton from "../WorkoutCardDetailsButtons/PlansButton";
+import SavedButton from "../WorkoutCardDetailsButtons/SavedButton";
 
 interface WorkoutCardDetailsProps {
   exercise: IExercise;
@@ -137,15 +139,9 @@ export default function WorkoutCardDetails({ exercise }: WorkoutCardDetailsProps
           </div>
 
           <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap">
-            <button className="btn border-0 bg-[#ccff00] px-5 font-normal text-black hover:bg-[#ccff00da] md:w-auto">
-              <BiCalendarPlus className="h-4 w-4" />
-              Add to today&apos;s plan
-            </button>
+            <PlaysButton exercise={exercise}/>
 
-            <button className="btn rounded-2xl border-gray-400 text-white hover:border-none md:w-auto">
-              <LuBookMarked className="h-4 w-4" />
-              Save for later
-            </button>
+            <SavedButton exercise={exercise} />
           </div>
         </div>
       </div>

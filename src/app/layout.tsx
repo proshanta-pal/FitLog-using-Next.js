@@ -5,6 +5,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import WorkoutsProvider from "@/context/WorkoutsContext";
 
 
 const oswald = Oswald({
@@ -26,10 +27,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
       
-        <Navbar />
-        {children}
+       <WorkoutsProvider>
+
+         <Navbar />
+         {children}
         <Footer />
-        <ToastContainer />
+
+       </WorkoutsProvider>
+
+
+        <ToastContainer 
+        newestOnTop/>
       
       </body>
     </html>

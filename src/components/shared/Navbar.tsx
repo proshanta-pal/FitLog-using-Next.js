@@ -2,6 +2,8 @@ import React from 'react'
 import Logo from '@/assets/logo.png'
 import Link from 'next/link'
 import Image from 'next/image'
+import PlanCountButton from '../NavbarButtons/PlanCountButton'
+import SavedCountButton from '../NavbarButtons/SavedCountButton'
 
 export default function Navbar() {
 
@@ -35,8 +37,8 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end flex items-center">
-                <Link href="/" className='hover:bg-[#1A1D23] text-sm py-1 px-3 transition-all'>Plan <span className='bg-[#ccff00] px-3 ml-2 rounded-2xl text-black'>0</span></Link>
-                <Link href="/" className='hover:bg-[#1A1D23] text-sm py-1 px-3 transition-all'>Saved <span className='border border-white px-3 ml-2 rounded-2xl'>0</span></Link>
+                <PlanCountButton />
+                <SavedCountButton />
             </div>
         </div>
     </nav>

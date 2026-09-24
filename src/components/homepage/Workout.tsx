@@ -9,7 +9,7 @@ export default async function Workout() {
   console.log(workoutData);
 
   return (
-    <main className='max-w-7xl mx-auto mt-12'>
+    <main className='max-w-7xl mx-auto mt-12' id='library'>
         <div className='space-y-3'>
             <h2 className='uppercase text-5xl'>THe Library</h2>
             <p className='text-xl font-medium text-[#B5B7AD]'>Twelve lifts covering every major muscle group.</p>
