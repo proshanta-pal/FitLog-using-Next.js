@@ -7,6 +7,7 @@ export default function Navbar() {
 
   const links = <>
     <li><Link href="/">Workouts</Link></li>
+    <li><Link href="/my-plan">My Plan</Link></li>
   </>
 
   return (
@@ -25,7 +26,7 @@ export default function Navbar() {
                 </div>
                 <div className='flex items-center gap-2'>
                     <Image src={Logo} alt='FitLog Logo'/>
-                    <Link href="/" className='uppercase font-bold text-xl'>FitLog</Link>
+                    <Link href="/" className='uppercase font-medium text-xl'>FitLog</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
