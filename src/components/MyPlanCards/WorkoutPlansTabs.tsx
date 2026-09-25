@@ -1,14 +1,16 @@
 'use client'
 
+import { btnType, WorkoutsContext } from '@/context/WorkoutsContext';
 import Plan from './Plan';
 import Saved from './Saved';
-import { useState } from 'react';
-
-type btnType = 'plan' | 'saved';
+import { Dispatch, SetStateAction, useContext, useState } from 'react';
 
 export default function WorkoutPlansTabs() {
 
-  const [buttonType, setButtonType] = useState<btnType>('plan');
+  const { buttonType, setButtonType } = useContext(WorkoutsContext) as {
+    buttonType: btnType;
+    setButtonType: Dispatch<SetStateAction<btnType>>;
+  };
 
   const handleButton = (type: btnType) => {
     setButtonType(type);

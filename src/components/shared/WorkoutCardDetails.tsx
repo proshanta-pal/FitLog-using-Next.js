@@ -1,8 +1,5 @@
 import { IExercise } from "@/types/workout.type";
 import Image from "next/image";
-import React from "react";
-import { BiCalendarPlus } from "react-icons/bi";
-import { LuBookMarked } from "react-icons/lu";
 import PlaysButton from "../WorkoutCardDetailsButtons/PlansButton";
 import SavedButton from "../WorkoutCardDetailsButtons/SavedButton";
 

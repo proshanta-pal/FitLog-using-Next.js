@@ -2,7 +2,7 @@
 
 import { IExercise } from '@/types/workout.type';
 import { WorkoutsContext } from '@/context/WorkoutsContext';
-import { useContext } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 import Image from 'next/image';
 import { IoTime } from 'react-icons/io5';
 import { FaFireFlameCurved } from 'react-icons/fa6';
@@ -13,9 +13,15 @@ import EmptyPopup from '../shared/EmptyPopup';
 
 export default function PlanCard() {
 
-  const { saved } = useContext(WorkoutsContext) as {
+  const { saved, setSaved } = useContext(WorkoutsContext) as {
     saved: IExercise[];
+    setSaved: Dispatch<SetStateAction<IExercise[]>>;
   };
+
+  const handleRemoveSavedWorkout = (exercise: IExercise) => {
+    const restSavedWorkout = saved.filter(save => save.id !== exercise.id);
+    setSaved(restSavedWorkout);
+  }
 
   return (
     <section>
@@ -67,7 +73,8 @@ export default function PlanCard() {
                       <Link href={`/exercise/${exercise.id}`}>
                         <button className='btn rounded-3xl border border-white transition-all hover:bg-[#1A1D23] hover:border-none '>View Details</button>
                       </Link>
-                      <button className='cursor-pointer'><RxCross2 /></button>
+                      <button className='cursor-pointer'
+                      onClick={() => handleRemoveSavedWorkout(exercise)}><RxCross2 /></button>
                     </div>
                   </div>
                 )

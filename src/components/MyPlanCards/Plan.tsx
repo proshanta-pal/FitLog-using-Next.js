@@ -2,7 +2,7 @@
 
 import { IExercise } from '@/types/workout.type';
 import { WorkoutsContext } from '@/context/WorkoutsContext';
-import { useContext } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 import Image from 'next/image';
 import { IoTime } from 'react-icons/io5';
 import { FaFireFlameCurved } from 'react-icons/fa6';
@@ -14,9 +14,15 @@ import EmptyPopup from '../shared/EmptyPopup';
 
 export default function PlanCard() {
 
-  const { plans } = useContext(WorkoutsContext) as {
+  const { plans, setPlans } = useContext(WorkoutsContext) as {
     plans: IExercise[];
+    setPlans: Dispatch<SetStateAction<IExercise[]>>;
   };
+
+  const handleRemovePlanWorkout = (exercise: IExercise) => {
+    const restPlanWorkout = plans.filter(plan => plan.id !== exercise.id);
+    setPlans(restPlanWorkout);
+  }
 
   return (
     <section>
@@ -68,11 +74,13 @@ export default function PlanCard() {
                       <Link href={`/exercise/${exercise.id}`}>
                         <button className='btn rounded-3xl border border-white transition-all hover:bg-[#1A1D23] hover:border-none '>View Details</button>
                       </Link>
-                      <button className='btn rounded-3xl px-5 text-black bg-[#ccff00] transition-all hover:bg-[#ccff00dd] hover:border-none w-35'>
+                      <button className='btn rounded-3xl px-5 text-black bg-[#ccff00] transition-all hover:bg-[#ccff00dd] hover:border-none w-35'
+                      onClick={() => handleRemovePlanWorkout(exercise)}>
                         <PiCheckBold />
                         Mark as Done
                       </button>
-                      <button className='cursor-pointer'><RxCross2 /></button>
+                      <button className='cursor-pointer'
+                      onClick={() => handleRemovePlanWorkout(exercise)}><RxCross2 /></button>
                     </div>
                   </div>
                 )
