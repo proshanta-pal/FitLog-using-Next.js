@@ -1,10 +1,13 @@
 import MetricsCard from '@/components/MyPlanCards/MetricsCard';
 import WorkoutPlansTabs from '@/components/MyPlanCards/WorkoutPlansTabs';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "My Plan | FitLog",
+  description: "My Plan page for planning and tracking workout or exercises",
+};
 
 export default function MyPlanPage() {
-
-  
-
   return (
     <section className='mx-5'>
         <div className="mx-auto max-w-7xl">

@@ -1,6 +1,12 @@
 import WorkoutCardDetails from '@/components/shared/WorkoutCardDetails';
 import { getWorkoutData } from '@/lib/apps';
 import { IExercise } from '@/types/workout.type';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Exercise | FitLog',
+  description: "Details page for each exercise or workout",
+};
 
 interface ExerciseDetailsPageProps{
     params: Promise<{
