@@ -1,15 +1,19 @@
-import React from 'react'
+'use client'
+
 import Logo from '@/assets/logo.png'
 import Link from 'next/link'
 import Image from 'next/image'
 import PlanCountButton from '../NavbarButtons/PlanCountButton'
 import SavedCountButton from '../NavbarButtons/SavedCountButton'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
 
+    const pathname = usePathname();
+
   const links = <>
-    <li><Link href="/">Workouts</Link></li>
-    <li><Link href="/my-plan">My Plan</Link></li>
+    <li><Link href="/" className={`text-md md:text-lg mr-2 ${pathname === '/' ? 'text-[#ccff00] bg-[#1A1D23]': ''}`} >Workouts</Link></li>
+    <li><Link href="/my-plan" className={`text-md md:text-lg mr-2 ${pathname === '/my-plan' ? 'text-[#ccff00] bg-[#1A1D23]': ''}`}>My Plan</Link></li>
   </>
 
   return (

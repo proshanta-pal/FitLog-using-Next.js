@@ -1,4 +1,3 @@
-import EmptyPopup from '@/components/shared/EmptyPopup';
 import MetricsCard from '@/components/MyPlanCards/MetricsCard';
 import WorkoutPlansTabs from '@/components/MyPlanCards/WorkoutPlansTabs';
 

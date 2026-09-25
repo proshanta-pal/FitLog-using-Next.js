@@ -11,7 +11,7 @@ import { RxCross2 } from 'react-icons/rx';
 import Link from 'next/link';
 import EmptyPopup from '../shared/EmptyPopup';
 
-export default function PlanCard() {
+export default function PlanCard({ sortedSaved } : { sortedSaved: IExercise[]}) {
 
   const { saved, setSaved } = useContext(WorkoutsContext) as {
     saved: IExercise[];
@@ -27,7 +27,7 @@ export default function PlanCard() {
     <section>
         <div>
             {
-              saved.length !== 0 ? saved.map((exercise: IExercise) => {
+              sortedSaved.length !== 0 ? sortedSaved.map((exercise: IExercise) => {
                 return (
                   <div key={exercise.id} 
                   className='bg-[#1A1D23] p-5 rounded-3xl flex justify-between items-center mb-8'>
