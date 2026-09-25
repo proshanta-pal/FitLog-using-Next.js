@@ -1,12 +1,10 @@
 import { getWorkoutData } from '@/lib/apps'
-import React from 'react'
 import WorkoutCard from '../shared/WorkoutCard';
 import { IExercise } from '@/types/workout.type';
 
 export default async function Workout() {
 
   const workoutData = await getWorkoutData();
-  console.log(workoutData);
 
   return (
     <main className='max-w-7xl mx-auto mt-12' id='library'>

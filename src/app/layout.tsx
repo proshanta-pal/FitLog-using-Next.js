@@ -10,7 +10,7 @@ import WorkoutsProvider from "@/context/WorkoutsContext";
 
 const oswald = Oswald({
   subsets: ['latin'],
-  weight: ['400', '700'], 
+  weight: ['200', '400', '700'], 
   display: 'swap',       
 });
 
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       
        <WorkoutsProvider>
 
-         <Navbar />
+        <Navbar />
          {children}
         <Footer />
 

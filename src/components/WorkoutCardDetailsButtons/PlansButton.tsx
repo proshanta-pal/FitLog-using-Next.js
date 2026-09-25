@@ -14,19 +14,22 @@ export default function PlaysButton({ exercise }: { exercise: IExercise }) {
   };
 
   const handlePlansButton = () => {
-    if(!plans.includes(exercise)){
-      setPlans([...plans, exercise]);
-      toast.success(`Added to today's plan`, {
-        position: "top-right",
-        theme: "dark",
-        transition: Zoom,
-      });
-    } else {
-      toast.error(`Already in your plan`, {
-        position: "top-right",
-        theme: "dark",
-        transition: Zoom,
-      });
+
+    const exists = plans.find(ex => ex.id === exercise.id);
+    if(!exists){
+        const newPlans = [...plans, exercise];
+        setPlans(newPlans);
+        toast.success(`Added to today's plan`, {
+          position: "top-right",
+          theme: "dark",
+          transition: Zoom,
+        });
+      } else {
+        toast.error(`Already in your plan`, {
+          position: "top-right",
+          theme: "dark",
+          transition: Zoom,
+        });
     }
   }
 

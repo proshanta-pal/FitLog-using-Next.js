@@ -14,19 +14,22 @@ export default function SavedButton({ exercise }: { exercise: IExercise }) {
   }
 
   const handleSavedButton = () => {
-    if(!saved.includes(exercise)){
-      setSaved([...saved, exercise]);
-      toast.success(`Saved for later`, {
-        position: "top-right",
-        theme: "dark",
-        transition: Zoom,
-      })
-    } else {
-      toast.error(`Already in your saved list`, {
-        position: "top-right",
-        theme: "dark",
-        transition: Zoom,
-      })
+
+    const exists = saved.find(ex => ex.id === exercise.id);
+    if(!exists){
+        const newSaved = [...saved, exercise];
+        setSaved(newSaved);
+        toast.success(`Saved for later`, {
+          position: "top-right",
+          theme: "dark",
+          transition: Zoom,
+        });
+      } else {
+        toast.error(`Already in your saved list`, {
+          position: "top-right",
+          theme: "dark",
+          transition: Zoom,
+        });
     }
   }
 
