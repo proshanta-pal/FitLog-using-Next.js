@@ -10,6 +10,7 @@ import { IoIosStarOutline } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
 import Link from 'next/link';
 import EmptyPopup from '../shared/EmptyPopup';
+import { toast, Zoom } from 'react-toastify';
 
 export default function PlanCard({ sortedSaved } : { sortedSaved: IExercise[]}) {
 
@@ -21,6 +22,11 @@ export default function PlanCard({ sortedSaved } : { sortedSaved: IExercise[]}) 
   const handleRemoveSavedWorkout = (exercise: IExercise) => {
     const restSavedWorkout = saved.filter(save => save.id !== exercise.id);
     setSaved(restSavedWorkout);
+    toast.success(`Removed from saved`, {
+      position: "top-right",
+      theme: "dark",
+      transition: Zoom
+    });
   }
 
   return (

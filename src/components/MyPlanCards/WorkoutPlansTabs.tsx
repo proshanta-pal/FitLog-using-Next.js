@@ -45,9 +45,9 @@ export default function WorkoutPlansTabs() {
     <section>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
-                <button onClick={() => handleButton('plan')} className={`btn btn-active ${buttonType === 'plan' ? 'btn-success' : ''} rounded-r-none`}>Today&apos;s plan</button>
+                <button onClick={() => handleButton('plan')} className={`btn btn-active rounded-2xl ${buttonType === 'plan' ? 'text-[#ccff00] bg-[#0F1115]' : ''} rounded-r-none`}>Today&apos;s plan</button>
 
-                <button onClick={() => handleButton('saved')} className={`btn btn-active ${buttonType === 'saved' ? 'btn-success' : ''} rounded-l-none`}>Saved</button>
+                <button onClick={() => handleButton('saved')} className={`btn btn-active rounded-2xl ${buttonType === 'saved' ? 'text-[#ccff00] bg-[#0F1115]' : ''} rounded-l-none`}>Saved</button>
             </div>
 
 

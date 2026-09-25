@@ -13,7 +13,7 @@ export default function MyPlanPage() {
                     My Plan
                 </h2>
 
-                <p className="text-xl font-thin text-[#B5B7AD]">
+                <p className="text-xl text-[#B5B7AD]">
                     Cap of five lifts for today. Finish them, then load more.
                 </p>
             </div>

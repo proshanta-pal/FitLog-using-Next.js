@@ -11,6 +11,7 @@ import { PiCheckBold } from 'react-icons/pi';
 import { RxCross2 } from 'react-icons/rx';
 import Link from 'next/link';
 import EmptyPopup from '../shared/EmptyPopup';
+import { toast, Zoom } from 'react-toastify';
 
 export default function PlanCard({ sortedPlans }: { sortedPlans: IExercise[]}) {
 
@@ -22,6 +23,21 @@ export default function PlanCard({ sortedPlans }: { sortedPlans: IExercise[]}) {
   const handleRemovePlanWorkout = (exercise: IExercise) => {
     const restPlanWorkout = plans.filter(plan => plan.id !== exercise.id);
     setPlans(restPlanWorkout);
+    toast.success(`Removed from today's plan`, {
+      position: "top-right",
+      theme: "dark",
+      transition: Zoom
+    });
+  }
+
+  const handleMarkedPlanWorkout = (exercise: IExercise) => {
+    const restPlanWorkout = plans.filter(plan => plan.id !== exercise.id);
+    setPlans(restPlanWorkout);
+    toast.success(`Workout logged - nice work`, {
+      position: "top-right",
+      theme: "dark",
+      transition: Zoom
+    });
   }
 
   return (
@@ -75,7 +91,7 @@ export default function PlanCard({ sortedPlans }: { sortedPlans: IExercise[]}) {
                         <button className='btn rounded-3xl border border-white transition-all hover:bg-[#1A1D23] hover:border-none '>View Details</button>
                       </Link>
                       <button className='btn rounded-3xl px-5 text-black bg-[#ccff00] transition-all hover:bg-[#ccff00dd] hover:border-none w-35'
-                      onClick={() => handleRemovePlanWorkout(exercise)}>
+                      onClick={() => handleMarkedPlanWorkout(exercise)}>
                         <PiCheckBold />
                         Mark as Done
                       </button>

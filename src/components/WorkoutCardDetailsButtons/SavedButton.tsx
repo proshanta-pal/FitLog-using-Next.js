@@ -3,7 +3,7 @@
 import { WorkoutsContext } from '@/context/WorkoutsContext'
 import { IExercise } from '@/types/workout.type'
 import { Dispatch, SetStateAction, useContext } from 'react'
-import { LuBookMarked } from 'react-icons/lu'
+import { LiaBookmarkSolid } from 'react-icons/lia'
 import { toast, Zoom } from 'react-toastify'
 
 export default function SavedButton({ exercise }: { exercise: IExercise }) {
@@ -36,7 +36,7 @@ export default function SavedButton({ exercise }: { exercise: IExercise }) {
   return (
     <button className="btn rounded-2xl border-gray-400 text-white hover:border-none md:w-auto"
     onClick={() => handleSavedButton()}>
-        <LuBookMarked className="h-4 w-4" />
+        <LiaBookmarkSolid className="h-6 w-4" />
         Save for later
     </button>
   )
